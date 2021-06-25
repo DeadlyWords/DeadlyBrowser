@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deadlywords.Controller">
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+            <MenuButton mnemonicParsing="false" text="Menu">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#addTab" text="NewTab" />
+                <MenuItem fx:id="newWindow" mnemonicParsing="false" onAction="#newWindow" text="New Window" />
+                  <MenuItem mnemonicParsing="false" onAction="#setHomepage" text="Set Homepage" />
+              </items>
+            </MenuButton>
+            <Button mnemonicParsing="false" text="Extras">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#openSettings" text="Settings" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </Button>
+            <Button mnemonicParsing="false" text="Hilfe">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#aboutPressed" text="Über" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </Button>
+          <Button fx:id="addTabButton" mnemonicParsing="false" onAction="#addTab" text="AddTab" />
+            <TextField fx:id="textField" onAction="#loadPage" prefHeight="25.0" prefWidth="887.0" />
+            <Button fx:id="loadPageButton" graphicTextGap="2.0" mnemonicParsing="false" onAction="#loadPage" prefHeight="4.0" prefWidth="14.0">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@arrow-icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <HBox opacity="0.92" prefHeight="30.0" prefWidth="124.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#setHomepage" prefHeight="25.0" prefWidth="40.0" text="Star" />
+                  <Button mnemonicParsing="false" onAction="#loadHomepage" prefHeight="25.0" prefWidth="54.0" text="Home" />
+                  <Button fx:id="closeButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="40.0" text="X" />
+               </children>
+            </HBox>
+        </items>
+      </ToolBar>
+   </top>
+   <bottom>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <items>
+            <ProgressBar fx:id="progressBar" prefWidth="200.0" progress="0.0" />
+            <Label fx:id="labelStatus" prefHeight="17.0" prefWidth="751.0" />
+         </items>
+      </ToolBar>
+   </bottom>
+   <center>
+      <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
